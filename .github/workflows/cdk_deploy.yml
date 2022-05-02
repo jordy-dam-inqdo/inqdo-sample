@@ -1,0 +1,51 @@
+name: CDK Deployment
+
+on:
+  workflow_dispatch:
+  # push:
+  # pull_request:
+  #   branches:
+  #     - main
+
+jobs:
+  deploy:
+    name: CDK Deploy
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+
+      - name: Install CDK
+        run: |
+          npm install -g typescript aws-cdk@2.16.0  # hardcode relevant version!
+          npm ci
+
+      - name: Configure AWS credentials for account
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: arn:aws:iam::xxxxxxxxxxxxx:role/Github-Deployment-xxxxxxxxxxxxxx
+          aws-region: eu-west-1
+
+#       - name: CDK Bootstrap
+#         run: |
+#           cdk bootstrap
+
+      - name: CDK Synth
+        run: |
+          cdk synth "*"
+
+#       - name: CDK Diff
+#         run: |
+#           cdk diff "*"
+
+      - name: CDK Deploy
+        run: |
+          cdk deploy "*" --require-approval never

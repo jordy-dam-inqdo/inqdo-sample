@@ -1,0 +1,6 @@
+FROM public.ecr.aws/w3i8r4e2/inqdo-tools:latest
+
+COPY ./requirements-dev.txt ${LAMBDA_TASK_ROOT}
+RUN pip install -r requirements-dev.txt
+
+

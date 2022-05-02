@@ -1,0 +1,43 @@
+name: CDK Test
+
+on:
+  pull_request: {}
+  workflow_dispatch: {}
+  
+jobs:
+  test:
+    name: CDK Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Configure Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+
+      - name: Install Prereqs
+        run: |
+          npm install -g typescript aws-cdk
+          npm ci
+          sudo gem install cfn-nag
+
+      - name: Synthesize CloudFormation
+        run: |
+          cdk synth "*"
+
+      - name: Check CloudFormation Output
+        run: |
+          cfn_nag_scan --input-path ./cdk.out --ignore-fatal
+
+#     - name: Slack Notification
+#       uses: rtCamp/action-slack-notify@v2
+#       env:
+#         SLACK_CHANNEL: general
+#         SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+#         SLACK_ICON: https://github.com/rtCamp.png?size=48
+#         SLACK_MESSAGE: 'Post Content :rocket:'
+#         SLACK_TITLE: Test Succeeded
+#         SLACK_USERNAME: inQdo
+#         SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

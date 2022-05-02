@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  lambda-dev:
+   build:
+     context: ./_dockercompose
+     dockerfile: Dockerfile-lambda-dev
+   image: lambda-dev:latest
+   container_name: lambda-dev
+   volumes:
+     - ./lambda:/var/task
+   env_file:
+     - ./lambda/lambda.env
+     - ./_dockercompose/credentials.env
+   ports:
+       - 9000:8080
+  inqdo-watcher:
+    image: public.ecr.aws/w3i8r4e2/inqdo-tools-watcher:latest
+    container_name: inqdo-watcher
+    privileged: true
+    environment:
+      - RELOAD_DELAY=2
+      - RELOAD_CONTAINERS=lambda-dev # Specify container service names comma separated.
+      - RESTART_TIMEOUT=1
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+      - ".:/code"

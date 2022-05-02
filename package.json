@@ -1,0 +1,29 @@
+{
+  "name": "iuclid",
+  "version": "0.1.0",
+  "bin": {
+    "iuclid": "bin/iuclid.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "^2.0.0",
+    "constructs": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.12",
+    "aws-cdk-lib": "^2.2.0",
+    "constructs": "^10.0.12",
+    "typescript": "~3.9.0"
+  },
+  "dependencies": {
+    "@aws-cdk/aws-apigatewayv2-alpha": "^2.4.0-alpha.0",
+    "cdk-dia": "^0.6.1",
+    "cdk-ec2-key-pair": "^3.0.1",
+    "ts-node": "^10.4.0"
+  }
+}

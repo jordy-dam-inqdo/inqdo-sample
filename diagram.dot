@@ -1,0 +1,440 @@
+digraph "Diagram" {
+  splines = "ortho";
+  pad = "1.0";
+  nodesep = "0.60";
+  ranksep = "0.75";
+  fontname = "Sans-Serif";
+  fontsize = "15";
+  dpi = "200";
+  rankdir = "BT";
+  compound = "true";
+  fontcolor = "#222222";
+  edge [
+    color = "#D5871488",
+    penwidth = 2,
+    arrowhead = "dot",
+    arrowtail = "dot",
+  ];
+  node [
+    shape = "box",
+    style = "rounded",
+    fixedsize = true,
+    width = 1.7,
+    height = 1.7,
+    labelloc = "c",
+    imagescale = true,
+    fontname = "Sans-Serif",
+    fontsize = 8,
+    margin = 8,
+  ];
+  subgraph "App" {
+    subgraph "cluster-SubGraph.App" {
+      graph [
+        label = "App",
+        labelloc = "b",
+        labeljust = "l",
+        margin = "10",
+        fontsize = "16",
+        penwidth = "2",
+        pencolor = "#888888",
+        style = "filled,rounded",
+        fillcolor = "#f3f3f3",
+      ];
+      subgraph "cluster-SubGraph.Vpc-Stack-acc" {
+        graph [
+          label = "Vpc-Stack-acc",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "Vpc-Stack-acc/ProjectName-acc-Vpc" [
+          label = " ProjectName-acc-Vpc",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-Virtual-Private-Cloud_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.266,
+        ];
+      }
+      subgraph "cluster-SubGraph.CloudTrail-Stack-acc" {
+        graph [
+          label = "CloudTrail-Stack-acc",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "CloudTrail-Stack-acc/ProjectName-acc-TrailTopic" [
+          label = " ProjectName acc\nTrailTopic",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_App-Integration/Arch_64/Arch_AWS-Simple-Notification-Service_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        "CloudTrail-Stack-acc/ProjectName-acc-CloudTrail" [
+          label = " ProjectName acc\nCloudTrail",
+          fontsize = 12,
+        ];
+      }
+      subgraph "cluster-SubGraph.Route53-Stack-acc" {
+        graph [
+          label = "Route53-Stack-acc",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "Route53-Stack-acc/ProjectName-acc-PrivateHostedZone" [
+          label = " ProjectName acc\nPrivateHostedZone",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+      }
+      subgraph "cluster-SubGraph.Instance-Stack-instance1-acc" {
+        graph [
+          label = "Instance-Stack-instance1-acc",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "Instance-Stack-instance1-acc/ProjectName-acc-Sginstance1" [
+          label = " ProjectName acc\nSginstance1",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/security_group.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        "Instance-Stack-instance1-acc/ProjectName-acc-Roleinstance1" [
+          label = " ProjectName acc\nRoleinstance1",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "Instance-Stack-instance1-acc/ProjectName-acc-instance1" [
+          label = " ProjectName acc\ninstance1",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T3-Instance_48_Dark.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        "Instance-Stack-instance1-acc/ProjectName-acc-StatusCheckAlarminstance1" [
+          label = " ProjectName acc\nStatusCheckAlarminsta",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Management-Governance/64/Arch_Amazon-CloudWatch_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "Instance-Stack-instance1-acc/ProjectName-acc-DnsRecordinstance1" [
+          label = " ProjectName acc\nDnsRecordinstance1",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+      }
+      subgraph "cluster-SubGraph.Instance-Stack-instance2-acc" {
+        graph [
+          label = "Instance-Stack-instance2-acc",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "Instance-Stack-instance2-acc/ProjectName-acc-Sginstance2" [
+          label = " ProjectName acc\nSginstance2",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/security_group.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        "Instance-Stack-instance2-acc/ProjectName-acc-Roleinstance2" [
+          label = " ProjectName acc\nRoleinstance2",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "Instance-Stack-instance2-acc/ProjectName-acc-instance2" [
+          label = " ProjectName acc\ninstance2",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Resource/Res_Compute/Res_48_Dark/Res_Amazon-EC2_T3-Instance_48_Dark.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        "Instance-Stack-instance2-acc/ProjectName-acc-StatusCheckAlarminstance2" [
+          label = " ProjectName acc\nStatusCheckAlarminsta",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Management-Governance/64/Arch_Amazon-CloudWatch_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "Instance-Stack-instance2-acc/ProjectName-acc-DnsRecordinstance2" [
+          label = " ProjectName acc\nDnsRecordinstance2",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Resource/Res_Networking-and-Content-Delivery/Res_48_Dark/Res_Amazon-Route-53-Hosted-Zone_48_Dark_gen.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+      }
+      subgraph "cluster-SubGraph.ApiGW-stack-ProjectName" {
+        graph [
+          label = "ApiGW-stack-ProjectName",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "ApiGW-stack-ProjectName/ProjectName-acc-ApiGateway" [
+          label = " ProjectName acc\nApiGateway",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+      }
+      subgraph "cluster-SubGraph.Lambda-Stack-ProjectName" {
+        graph [
+          label = "Lambda-Stack-ProjectName",
+          labelloc = "b",
+          labeljust = "l",
+          margin = "10",
+          fontsize = "16",
+          penwidth = "2",
+          pencolor = "#888888",
+          style = "filled,rounded",
+          fillcolor = "#e4e4e4",
+        ];
+        "Lambda-Stack-ProjectName/ProjectName-acc-lambdaRole" [
+          label = " ProjectName acc\nlambdaRole",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Security-Identity-Compliance/64/Arch_AWS-Identity-and-Access-Management_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "Lambda-Stack-ProjectName/ProjectName-acc-lambdaFunction" [
+          label = " ProjectName acc\nlambdaFunction",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Compute/64/Arch_AWS-Lambda_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 2,
+          height = 2.4819999999999998,
+        ];
+        "Lambda-Stack-ProjectName/ProjectName-acc-ApiGwIntegration" [
+          label = " ApiGatewayV2\nIntegration",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.682,
+        ];
+        "Lambda-Stack-ProjectName/ProjectName-acc-ApiGwRoute-Lambda" [
+          label = " ApiGatewayV2 Route",
+          fontsize = 12,
+          image = "/Users/tomn/dev/aws-cdk-skeleton/cdk_infra/node_modules/cdk-dia/icons/aws/Service/Arch_Networking-Content/64/Arch_Amazon-API-Gateway_64@5x.png",
+          imagescale = "true",
+          imagepos = "tc",
+          penwidth = "0",
+          shape = "node",
+          fixedsize = "true",
+          labelloc = "b",
+          width = 1.2,
+          height = 1.466,
+        ];
+      }
+    }
+  }
+  "CloudTrail-Stack-acc/ProjectName-acc-CloudTrail" -> "CloudTrail-Stack-acc/ProjectName-acc-TrailTopic" [
+    dir = "both",
+  ];
+  "Route53-Stack-acc/ProjectName-acc-PrivateHostedZone" -> "Vpc-Stack-acc/ProjectName-acc-Vpc" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance1-acc/ProjectName-acc-Sginstance1" -> "Vpc-Stack-acc/ProjectName-acc-Vpc" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance1-acc/ProjectName-acc-instance1" -> "Instance-Stack-instance1-acc/ProjectName-acc-Roleinstance1" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance1-acc/ProjectName-acc-instance1" -> "Vpc-Stack-acc/ProjectName-acc-Vpc" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance1-acc/ProjectName-acc-instance1" -> "Instance-Stack-instance1-acc/ProjectName-acc-Sginstance1" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance1-acc/ProjectName-acc-StatusCheckAlarminstance1" -> "Instance-Stack-instance1-acc/ProjectName-acc-instance1" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance1-acc/ProjectName-acc-DnsRecordinstance1" -> "Route53-Stack-acc/ProjectName-acc-PrivateHostedZone" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance1-acc/ProjectName-acc-DnsRecordinstance1" -> "Instance-Stack-instance1-acc/ProjectName-acc-instance1" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance2-acc/ProjectName-acc-Sginstance2" -> "Vpc-Stack-acc/ProjectName-acc-Vpc" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance2-acc/ProjectName-acc-instance2" -> "Instance-Stack-instance2-acc/ProjectName-acc-Roleinstance2" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance2-acc/ProjectName-acc-instance2" -> "Vpc-Stack-acc/ProjectName-acc-Vpc" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance2-acc/ProjectName-acc-instance2" -> "Instance-Stack-instance2-acc/ProjectName-acc-Sginstance2" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance2-acc/ProjectName-acc-StatusCheckAlarminstance2" -> "Instance-Stack-instance2-acc/ProjectName-acc-instance2" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance2-acc/ProjectName-acc-DnsRecordinstance2" -> "Route53-Stack-acc/ProjectName-acc-PrivateHostedZone" [
+    dir = "both",
+  ];
+  "Instance-Stack-instance2-acc/ProjectName-acc-DnsRecordinstance2" -> "Instance-Stack-instance2-acc/ProjectName-acc-instance2" [
+    dir = "both",
+  ];
+  "Lambda-Stack-ProjectName/ProjectName-acc-lambdaFunction" -> "Lambda-Stack-ProjectName/ProjectName-acc-lambdaRole" [
+    dir = "both",
+  ];
+  "Lambda-Stack-ProjectName/ProjectName-acc-ApiGwIntegration" -> "ApiGW-stack-ProjectName/ProjectName-acc-ApiGateway" [
+    dir = "both",
+  ];
+  "Lambda-Stack-ProjectName/ProjectName-acc-ApiGwIntegration" -> "Lambda-Stack-ProjectName/ProjectName-acc-lambdaRole" [
+    dir = "both",
+  ];
+  "Lambda-Stack-ProjectName/ProjectName-acc-ApiGwIntegration" -> "Lambda-Stack-ProjectName/ProjectName-acc-lambdaFunction" [
+    dir = "both",
+  ];
+  "Lambda-Stack-ProjectName/ProjectName-acc-ApiGwRoute-Lambda" -> "Lambda-Stack-ProjectName/ProjectName-acc-ApiGwIntegration" [
+    dir = "both",
+  ];
+  "Lambda-Stack-ProjectName/ProjectName-acc-ApiGwRoute-Lambda" -> "ApiGW-stack-ProjectName/ProjectName-acc-ApiGateway" [
+    dir = "both",
+  ];
+}
